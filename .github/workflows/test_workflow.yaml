@@ -6,5 +6,8 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-      - name: test
-        run: echo "test"
+      - name: installation
+        run: ng install
+
+      - name: build
+        run: ng build
