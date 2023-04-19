@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2 align="text-center">List of Post</h2>
+
+  <div class="d-flex justify-content-end mb-3">
+    <button   class="btn btn-success" [routerLink]="['/addPost']">
+      <i  class="bi bi-plus-square-fill"></i> Create Post
+    </button>
+  </div>
+
+  <table class="table table-bordered table-striped table-hover px-3" >
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>CONTENT</th>
+        <th>Date</th>
+        <th>Image</th>
+        <th>Resume</th>
+        <th>Title</th>
+        <th>Author_id</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts">
+        <td>{{post.id}}</td>
+        <td>{{post.content}}</td>
+        <td>{{post.created_at}}</td>
+        <td><img src="{{post.image_url}}" width="50px"></td>
+        <td>{{post.resume}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.author_id}}</td>
+        <td>
+          <a class="btn btn-warning" (click)="updatePost(post.id)"><i class="bi bi-pencil-fill"></i></a>
+          <button  class="btn btn-danger" (click)="deletePost(post.id)"><i class="bi bi-trash"></i></button>
+          <a class="btn btn-primary" (click)="detailsPost(post.id)">detail</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

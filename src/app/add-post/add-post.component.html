@@ -1,0 +1,33 @@
+
+
+<h1>Editing Post "My new Post"</h1>
+<form #addPostForm="ngForm" (ngSubmit)="createPost(addPostForm)">
+  <div class="form-group">
+    <label for="title">Titre du post :</label>
+    <input ngModel name="title" type="text" class="form-control" id="title" placeholder="Entrer le titre du post">
+  </div>
+  <div class="form-group">
+
+     <label for="authorid">Author</label>
+
+     <select ngModel name="author_id" class="form-control" id="authorid" aria-describedby="emailHelp">
+
+    <option *ngFor="let author of authors" value="{{author.id}}">{{author.full_name}}</option>
+
+     </select>
+     </div>
+  <div class="form-group">
+    <label for="image_url">Image :</label>
+    <input ngModel name="image_url" type="text" class="form-control" id="image_url">
+  </div>
+  <div class="form-group">
+    <label for="resume">Résumé :</label>
+    <textarea ngModel name="resume" class="form-control" id="resume" rows="3"></textarea>
+</div>
+  <div class="form-group">
+    <label for="content">Contenu :</label>
+    <textarea ngModel name="content" class="form-control" id="content" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>
+

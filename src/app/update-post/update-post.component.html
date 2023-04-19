@@ -1,0 +1,28 @@
+
+
+<h1>Editing Post "My new Post"</h1>
+<form  (ngSubmit)="updatePost()">
+  <div class="form-group">
+    <label for="title">Titre du post :</label>
+    <input [(ngModel)]="title" name="title" type="text" class="form-control" id="title" placeholder="Entrer le titre du post">
+  </div>
+  <div class="form-group">
+    <label for="author_id">Auteur du post :</label>
+    <input [(ngModel)]="author_id" name="author_id" type="text" class="form-control" id="author_id">
+  </div>
+  <div class="form-group">
+    <label for="image_url">Image :</label>
+    <input [(ngModel)]="image_url" name="image_url" type="text" class="form-control" id="image_url">
+  </div>
+  <div class="form-group">
+    <label for="resume">Résumé :</label>
+    <textarea [(ngModel)]="resume" name="resume" class="form-control" id="resume" rows="3"></textarea>
+</div>
+  <div class="form-group">
+    <label for="content">Contenu :</label>
+    <textarea [(ngModel)]="content" name="content" class="form-control" id="content" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+
+</form>
+
